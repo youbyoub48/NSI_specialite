@@ -7,14 +7,15 @@ function Bouton(){
     // ajoute le nœud texte au nouveau bouton créé
     newButton.appendChild(newTexte);
     // on lui donne la class Bouton
-    newButton.id = element
+    newButton.id = element;
 
     newButton.onclick = function() {
         // element
         var elt = this;
         // id de l'element
         var idElt = this.getAttribute('id');
-        console.log(idElt)
+        console.log(idElt);
+        deuxieme_Choix(idElt);
         }
     
     // ajoute le bouton au body du html
@@ -39,18 +40,31 @@ function Lecture(){
     readTextFile("./data.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de data.json
         data = JSON.parse(text); // on mets le contenue de data.json dans la variable data
         console.log(data); // on print la variable data pour voir si tout marche bien
-        Liste_Spe()
-        Bouton()
+        Liste_Spe();
+        Bouton();
     });
 }
 
 function Liste_Spe(){
     for (const element in data) {
-        console.log(element)
+        console.log(element);
     }
 }
 
-
-function Test() {
-    console.log("marche")
+function deuxieme_Choix(id) {
+    var choix_possible = data[id];
+    console.log(choix_possible);
+    var liste_choix_possible = [];
+    for (const element in choix_possible) {
+        liste_choix_possible.push(element);
+    }
+    var check;
+    for (const element in data) {
+        check = liste_choix_possible.includes(element);
+        if (check == false && element != id) {
+            console.log(element);
+            var suprimer = document.getElementById(element);
+            suprimer.remove();
+        }
+    }
 }
