@@ -1,0 +1,83 @@
+{
+    "NSI" : {
+        "MATHS" : ["PC-CH","LLCE"],
+        "SVT" : ["SES","ARTS","HLPHI"],
+        "PH-CH" : ["MATHS"],
+        "LLCE" : ["MATHS"],
+        "SES" : ["SVT"],
+        "ARTS" : ["SVT"],
+        "HLPHI" : ["SVT"]
+        },
+    "ARTS" : {
+        "LLCE" : ["SES","HLPHI","MATHS","HGPO"],
+        "MATHS" : ["PC-CH","SES","LLCE"],
+        "HGPO" : ["SES","LLCE","HLPHI","MATHS"],
+        "SVT" : ["NSI"],
+        "NSI" : ["SVT"],
+        "HLPHI" : ["LLCE","HGPO"],
+        "SES" : ["SES","MATHS","LLCE"]
+        },
+    "HGPO" : {
+        "SES" : ["MATHS","HLPHI","SVT","LLCE","ARTS"],
+        "ARTS" : ["SES","LLCE","HLPHI"],
+        "HLPHI" : ["SES","ARTS","LLCE"],
+        "LLCE" : ["SES","ARTS","HLPHI","SVT"],
+        "MATHS" : ["SES"],
+        "SVT" : ["SES"]
+        },
+    "HLPHI" : {
+       "LLCE" : ["SES","ARTS","HGPO"],
+       "HGPO" : ["SES","ARTS","LLCE"],
+       "SES" : ["LLCE","HGPO"],
+       "SVT" : ["NSI"],
+       "ARTS" : ["LLCE","HGPO"],
+       "NSI" : ["SVT"]
+        },
+    "SVT" : {
+        "NSI" : ["SES","ARTS","HLPHI"],
+        "MATHS" : ["PH-CH","SES"],
+        "SES" : ["HGPO","NSI","MATHS"],
+        "ARTS" : ["NSI"],
+        "HLPHI" : ["NSI"],
+        "PH-CH" : ["MATHS"],
+        "HGPO" : ["SES","LLCE"],
+        "LLCE" : ["HGPO"]
+        },
+    "MATHS" : {
+        "PH-CH" : ["SES","ARTS","SVT","NSI","LLCE"],
+        "SES" : ["HGPO","ARTS","SVT","PH-CH","LLCE"],
+        "LLCE" : ["NSI","ARTS","PH-CH","SES"],
+        "ARTS" : ["PH-CH","SES","LLCE"],
+        "SVT" : ["SES","PH-CH"],
+        "NSI" : ["PH-CH","LLCE"],
+        "HGPO" : ["SES"]
+        },
+    "PH-CH" : {
+        "MATHS" : ["SES","ARTS","SVT","NSI","LLCE"],
+        "SES" : ["MATHS"],
+        "ARTS" : ["MATHS"],
+        "SVT" : ["MATHS"],
+        "NSI" : ["MATHS"],
+        "LLCE" : ["MATHS"]
+        },
+    "LLCE" : {
+        "SES" : ["MATHS","HLPHI","ARTS","HGPO"],
+        "HLPHI" : ["ARTS","SES","HGPO"],
+        "MATHS" : ["NSI","ARTS","PH-CH","SES"],
+        "HGPO" : ["SES","HLPHI","ARTS","SVT"],
+        "ARTS" : ["SES","HLPHI","MATHS","HGPO"],
+        "NSI" : ["MATHS"],
+        "PH-CH" : ["MATHS"],
+        "SVT" : ["HGPO"]
+        },
+    "SES" : {
+        "HGPO" : ["MATHS","HLPHI","SVT","LLCE","ARTS"],
+        "MATHS" : ["HGPO","PH-CH","ARTS","LLCE","SVT"],
+        "LLCE" : ["MATHS","HLPHI","ARTS","HGPO"],
+        "HLPHI" : ["HGPO","LLCE"],
+        "SVT" : ["NSI","MATHS","HGPO"],
+        "ARTS" : ["MATHS","MATHS","HGPO"],
+        "PH-CH" : ["MATHS"],
+        "NSI" : ["SVT"]
+        }
+}
