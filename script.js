@@ -7,8 +7,16 @@ function Bouton(){
     // ajoute le nœud texte au nouveau bouton créé
     newButton.appendChild(newTexte);
     // on lui donne la class Bouton
-    newButton.className = "Bouton"
-    newButton.onclick = Test
+    newButton.id = element
+
+    newButton.onclick = function() {
+        // element
+        var elt = this;
+        // id de l'element
+        var idElt = this.getAttribute('id');
+        console.log(idElt)
+        }
+    
     // ajoute le bouton au body du html
     document.body.appendChild(newButton)
     }
