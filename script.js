@@ -13,9 +13,22 @@ function Bouton(){
     }
 }
 
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
+
+
 function Lecture(){
-    $.get("data.json", function(data){
+    readTextFile("./data.json", function(text){
+        var data = JSON.parse(text);
         console.log(data);
-        //console.log(data["file_1"]["author"]);
-        });
+    });
 }
