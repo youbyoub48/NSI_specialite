@@ -6,12 +6,12 @@ function Bouton(){
     var newTexte = document.createTextNode(element);
     // ajoute le nœud texte au nouveau bouton créé
     newButton.appendChild(newTexte);
-    // on lui donne la class Bouton
+    // on lui donne la id du nom de la spe
     newButton.id = element;
+    newButton.className = "button"
 
     newButton.onclick = function() {
-        // element
-        var elt = this;
+        this.className = "choisie"
         // id de l'element
         var idElt = this.getAttribute('id');
         console.log(idElt);
