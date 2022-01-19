@@ -1,25 +1,10 @@
-.button {
-    background-color: blue; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 2em;
-    margin-left: 2em;
-  }
-
-body
-{
-  background-image: url(./fond_app.png);
-}
-
-.conteneur
+#conteneur
 {
   display: flex;
   justify-content: center;
+  background-image: url(./fond_app.png);
+  height: 800px;
+  width: 800px;
 }
 
 .boite
@@ -32,6 +17,10 @@ img {
   height: 100%;
   width: 100%;
   object-fit: contain;
+  animation-name: spin;
+  animation-duration: 25000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
  }
 
  
@@ -47,4 +36,13 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: larger;
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
 }

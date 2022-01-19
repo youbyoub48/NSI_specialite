@@ -1,6 +1,5 @@
 function Bouton(){
-    var conteneur = document.createElement("div")
-    conteneur.className = "conteneur";
+    var conteneur = document.getElementById("conteneur")
     document.body.appendChild(conteneur);
     var compteur = 1;
     var indice = 1;
@@ -14,23 +13,20 @@ function Bouton(){
             conteneur.appendChild(temp)
         }
 
-        // crée un nouveau bouton
-        var newButton = document.createElement("img");
-        newButton.src = "./4.png"
-        // texte du bouton
+        // crée une nouvelle image
+        var newImg = document.createElement("img");
+        newImg.src = "./4.png"
+        // texte de l'image
         var newTexte = document.createTextNode(element);
         var div = document.createElement("div");
         div.className = "contenant"
-        // ajoute le nœud texte au nouveau bouton créé
-        //newButton.appendChild(newTexte);
         var span_text = document.createElement("span");
         span_text.appendChild(newTexte)
         span_text.className = "texte_centrer"
-        // on lui donne la id du nom de la spe
-        newButton.id = element;
-        //newButton.className = "button";
+        // on lui donne le id du nom de la spe
+        newImg.id = element;
 
-        newButton.onclick = function() {
+        newImg.onclick = function() {
             var class_ = this.className
             
             if (class_ != "supr") {
@@ -46,7 +42,7 @@ function Bouton(){
         }
         
         // ajoute le bouton au body du html
-        div.appendChild(newButton);
+        div.appendChild(newImg);
         div.appendChild(span_text);
         temp.appendChild(div);
         compteur = compteur+1;
