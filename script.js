@@ -44,7 +44,6 @@ function Lecture(){
         console.log(data); // on print la variable data pour voir si tout marche bien
         choisie = []
         console.log(choisie)
-        Liste_Spe();
         Bouton();
     });
 }
@@ -56,19 +55,39 @@ function Liste_Spe(){
 }
 
 function deuxieme_Choix(id) {
-    var choix_possible = data[id];
-    console.log(choix_possible);
     var liste_choix_possible = [];
-    for (const element in choix_possible) {
-        liste_choix_possible.push(element);
-    }
     var check;
-    for (const element in data) {
-        check = liste_choix_possible.includes(element);
-        if (check == false && element != id) {
-            console.log(element);
-            var suprimer = document.getElementById(element);
-            suprimer.remove();
+    
+    if (choisie.length == 1) {
+        var choix_possible = data[id];
+        console.log(choix_possible);
+        for (const element in choix_possible) {
+            liste_choix_possible.push(element);
         }
+
+        for (const element in data) {
+            check = liste_choix_possible.includes(element);
+            if (check == false && element != id) {
+                console.log(element);
+                var suprimer = document.getElementById(element);
+                suprimer.className = "supr";
+            }
+        }
+    }
+
+    if (choisie.length == 2) {
+        var choix_possible = data[choisie[0]];
+        var choix_possible_2 = choix_possible[id]
+
+        for (const element in choix_possible) {
+            check = choix_possible_2.includes(element);
+            if (check == false && element != id) {
+                console.log(element);
+                var suprimer = document.getElementById(element);
+                suprimer.className = "supr";
+            }
+        }
+        console.log(choix_possible_2)
+
     }
 }

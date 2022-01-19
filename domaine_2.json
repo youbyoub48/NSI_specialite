@@ -1,0 +1,82 @@
+{
+    "NSI" : {
+        "MATHS" : [{"PC-CH": ["Sciences, technologie, ingénierie et mathématiques","Informatique, mathématiques et numérique","Sciences du vivant et géosciences","Santé"] },{"LLCE": ["Droit et sciences politiques","Lettres, langues et communication","Sciences économiques et de gestion"]}], 
+        "SVT" : [{"SES": ["Informatique, mathématiques et numérique","Sciences du vivant et géosciences","Sciences économiques et de gestion","Sciences, technologie, ingénierie et mathématiques"]},{"ARTS":["Arts et industries culturelles","Informatique, mathématiques et numérique","Sciences, technologie, ingénierie et mathématiques"]},{"HLPHI":["Santé","Sciences du vivant et géosciences","Sciences, technologie, ingénierie et mathématiques"]}],
+        "PH-CH" : [{"MATHS": ["Sciences, technologie, ingénierie et mathématiques","Informatique, mathématiques et numérique", "Santé"]}],
+        "LLCE" : [{"MATHS" : ["Sciences, technologie, ingénierie et mathématiques", "Informatique, mathématiques et numérique", "Sciences économiques et de gestion"]}],
+        "SES" : [{"SVT" : ["Informatique, mathématiques et numérique", "Sciences, technologie, ingénierie et mathématiques", "Sciences humaines et sociales"]}],
+        "ARTS" : [{"SVT" : ["Arts et industries culturelles", "Sciences, technologie, ingénierie et mathématiques", "Sciences du vivant et géosciences"]}],
+        "HLPHI" : [{"SVT" : ["Sciences humaines et sociales", "Sciences, technologie, ingénierie et mathématiques", "Sciences du vivant et géosciences"]}]
+        },
+    "ARTS" : {
+        "LLCE" : [{"SES": ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles", "Droit et sciences politiques"]},{"HLPHI": ["Lettres, langues et communication", "Droit et sciences politiques", "Arts et industries culturelles"]},{"MATHS": ["Lettres, langues et communication", "Arts et industries culturelles", "Sciences économiques et de gestion"]},{"HGPO": ["Lettres, langues et communication", "Droit et sciences politiques", "Arts et industries culturelles"]}],
+        "MATHS" : [{"PC-CH" : ["Sciences, technologie, ingénierie et mathématiques", "Informatique, mathématiques et numérique", "Sciences du vivant et géosciences"]},{"SES" : ["Lettres, langues et communication", "Sciences économiques et de gestion", "Sciences humaines et sociales"]},{"LLCE" : ["Lettres, langues et communication", "Sciences économiques et de gestion", "Arts et industries culturelles"]}],
+        "HGPO" : [{"SES" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]},{"LLCE" : ["Lettres, langues et communication", "Arts et industries culturelles", "Sciences humaines et sociales"]},{"HLPHI" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]},{"MATHS" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]}],
+        "SVT" : [{"NSI" : ["Informatique, mathématiques et numérique", "Sciences, technologie, ingénierie et mathématiques", "Sciences humaines et sociales"]}],
+        "NSI" : [{"SVT" : ["Informatique, mathématiques et numérique", "Sciences, technologie, ingénierie et mathématiques", "Sciences humaines et sociales"]}],
+        "HLPHI" : [{"LLCE" : ["Lettres, langues et communication", "Droit et sciences politiques", "Arts et industries culturelles"]},{"HGPO" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]}],
+        "SES" : [{"MATHS" : ["Sciences, technologie, ingénierie et mathématiques", "Sciences humaines et sociales", "Sciences du vivant et géosciences"]},{"LLCE" : ["Lettres, langues et communication", "Lettres, langues et communication", "Sciences humaines et sociales"]}]
+        },
+    "HGPO" : {
+        "SES" : [{"MATHS" : ["Droit et sciences politiques", "Sciences économiques et de gestion", "Sciences humaines et sociales"]},{"HLPHI" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]},{"SVT" : ["Sciences humaines et sociales", "Lettres, langues et communication", "Droit et sciences politiques"]}, {"LLCE" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]},{"ARTS" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]}],
+        "ARTS" : [{"SES" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]},{"LLCE" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]},{"HLPHI" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]}],
+        "HLPHI" : [{"SES" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]},{"ARTS" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]},{"LLCE" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]}],
+        "LLCE" : [{"SES" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]},{"ARTS" : ["Lettres, langues et communication", "Arts et industries culturelles", "Sciences humaines et sociales"]},{"HLPHI" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]},{"SVT" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]}],
+        "MATHS" : [{"SES" : ["Droit et sciences politiques", "Sciences économiques et de gestion", "Sciences humaines et sociales"]}],
+        "SVT" : [{"SES" : []}]
+        },
+    "HLPHI" : {
+       "LLCE" : [{"SES" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]},{"ARTS" : ["Lettres, langues et communication", "Droit et sciences politiques", "Arts et industries culturelles"]},{"HGPO" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]}],
+       "HGPO" : [{"SES" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]},{"ARTS" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]},{"LLCE" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]}],
+       "SES" : [{"LLCE" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]},{"HGPO" : ["Droit et sciences politiques", "Lettres, langues et communication", "Sciences humaines et sociales"]}],
+       "SVT" : [{"NSI" : ["Santé","Sciences du vivant et géosciences","Sciences, technologie, ingénierie et mathématiques"]}],
+       "ARTS" : [{"LLCE" : ["Lettres, langues et communication", "Droit et sciences politiques", "Arts et industries culturelles"]},{"HGPO" : ["Lettres, langues et communication", "Sciences humaines et sociales", "Arts et industries culturelles"]}],
+       "NSI" : [{"SVT" : ["Santé","Sciences du vivant et géosciences","Sciences, technologie, ingénierie et mathématiques"]}]},
+    "SVT" : {
+        "NSI" : ["SES","ARTS","HLPHI"],
+        "MATHS" : ["PH-CH","SES"],
+        "SES" : ["HGPO","NSI","MATHS"],
+        "ARTS" : ["NSI"],
+        "HLPHI" : ["NSI"],
+        "PH-CH" : ["MATHS"],
+        "HGPO" : ["SES","LLCE"],
+        "LLCE" : ["HGPO"]
+        },
+    "MATHS" : {
+        "PH-CH" : ["SES","ARTS","SVT","NSI","LLCE"],
+        "SES" : ["HGPO","ARTS","SVT","PH-CH","LLCE"],
+        "LLCE" : ["NSI","ARTS","PH-CH","SES"],
+        "ARTS" : ["PH-CH","SES","LLCE"],
+        "SVT" : ["SES","PH-CH"],
+        "NSI" : ["PH-CH","LLCE"],
+        "HGPO" : ["SES"]
+        },
+    "PH-CH" : {
+        "MATHS" : [{"SES" : ["Informatique, mathématiques et numérique", "Sciences économiques et de gestion", "Sciences, technologie, ingénierie et mathématiques"]},{"ARTS" : ["Sciences, technologie, ingénierie et mathématiques", "Informatique, mathématiques et numérique", "Sciences du vivant et géosciences"]},{"SVT" : ["Santé", "Sciences du vivant et géosciences", "Sciences, technologie, ingénierie et mathématiques"]},{"NSI" : ["Sciences, technologie, ingénierie et mathématiques", "Informatique, mathématiques et numérique", "Sciences du vivant et géosciences"]},{"LLCE" : ["Sciences, technologie, ingénierie et mathématiques", "Lettres, langues et communication", "Sciences du vivant et géosciences"]}],
+        "SES" : ["MATHS"],
+        "ARTS" : ["MATHS"],
+        "SVT" : ["MATHS"],
+        "NSI" : ["MATHS"],
+        "LLCE" : ["MATHS"]
+        },
+    "LLCE" : {
+        "SES" : ["MATHS","HLPHI","ARTS","HGPO"],
+        "HLPHI" : ["ARTS","SES","HGPO"],
+        "MATHS" : ["NSI","ARTS","PH-CH","SES"],
+        "HGPO" : ["SES","HLPHI","ARTS","SVT"],
+        "ARTS" : ["SES","HLPHI","MATHS","HGPO"],
+        "NSI" : ["MATHS"],
+        "PH-CH" : ["MATHS"],
+        "SVT" : ["HGPO"]
+        },
+    "SES" : {
+        "HGPO" : ["MATHS","HLPHI","SVT","LLCE","ARTS"],
+        "MATHS" : ["HGPO","PH-CH","ARTS","LLCE","SVT"],
+        "LLCE" : ["MATHS","HLPHI","ARTS","HGPO"],
+        "HLPHI" : ["HGPO","LLCE"],
+        "SVT" : ["NSI","MATHS","HGPO"],
+        "ARTS" : ["MATHS","MATHS","HGPO"],
+        "PH-CH" : ["MATHS"],
+        "NSI" : ["SVT"]
+        }
+}
