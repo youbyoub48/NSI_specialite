@@ -15,20 +15,27 @@ function Bouton(){
         }
 
         // crée un nouveau bouton
-        var newButton = document.createElement("button");
+        var newButton = document.createElement("img");
+        newButton.src = "./4.png"
         // texte du bouton
         var newTexte = document.createTextNode(element);
+        var div = document.createElement("div");
+        div.className = "contenant"
         // ajoute le nœud texte au nouveau bouton créé
-        newButton.appendChild(newTexte);
+        //newButton.appendChild(newTexte);
+        var span_text = document.createElement("span");
+        span_text.appendChild(newTexte)
+        span_text.className = "texte_centrer"
         // on lui donne la id du nom de la spe
         newButton.id = element;
-        newButton.className = "button";
+        //newButton.className = "button";
 
         newButton.onclick = function() {
             var class_ = this.className
             
             if (class_ != "supr") {
                 this.className = "choisie";
+                this.src = "./6.png"
                 // id de l'element
                 var idElt = this.getAttribute('id');
                 console.log(idElt);
@@ -39,7 +46,9 @@ function Bouton(){
         }
         
         // ajoute le bouton au body du html
-        temp.appendChild(newButton);
+        div.appendChild(newButton);
+        div.appendChild(span_text);
+        temp.appendChild(div);
         compteur = compteur+1;
 
         if (compteur == 4) {
@@ -95,6 +104,7 @@ function deuxieme_Choix(id) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
                 suprimer.className = "supr";
+                suprimer.src = "./5.png"
             }
         }
     }
@@ -109,6 +119,7 @@ function deuxieme_Choix(id) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
                 suprimer.className = "supr";
+                suprimer.src = "./5.png"
             }
         }
         console.log(choix_possible_2);
@@ -121,6 +132,7 @@ function deuxieme_Choix(id) {
             if (check == false) {
                 var suprimer = document.getElementById(element);
                 suprimer.className = "supr";
+                suprimer.src = "./5.png"
             }
         }
     }
