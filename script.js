@@ -1,27 +1,51 @@
 function Bouton(){
-    for (const element in data) {
-    // crée un nouveau bouton
-    var newButton = document.createElement("button");
-    // texte du bouton
-    var newTexte = document.createTextNode(element);
-    // ajoute le nœud texte au nouveau bouton créé
-    newButton.appendChild(newTexte);
-    // on lui donne la id du nom de la spe
-    newButton.id = element;
-    newButton.className = "button"
+    var conteneur = document.createElement("div")
+    conteneur.className = "conteneur";
+    document.body.appendChild(conteneur);
+    var compteur = 1;
+    var indice = 1;
 
-    newButton.onclick = function() {
-        this.className = "choisie"
-        // id de l'element
-        var idElt = this.getAttribute('id');
-        console.log(idElt);
-        choisie.push(idElt)
-        console.log(choisie)
-        deuxieme_Choix(idElt);
+    for (const element in data) {
+        console.log(compteur)
+        if (compteur == 1) {
+            var temp = document.createElement("div");
+            temp.id = indice;
+            temp.className = "boite"
+            conteneur.appendChild(temp)
         }
-    
-    // ajoute le bouton au body du html
-    document.body.appendChild(newButton)
+
+        // crée un nouveau bouton
+        var newButton = document.createElement("button");
+        // texte du bouton
+        var newTexte = document.createTextNode(element);
+        // ajoute le nœud texte au nouveau bouton créé
+        newButton.appendChild(newTexte);
+        // on lui donne la id du nom de la spe
+        newButton.id = element;
+        newButton.className = "button";
+
+        newButton.onclick = function() {
+            var class_ = this.className
+            
+            if (class_ != "supr") {
+                this.className = "choisie";
+                // id de l'element
+                var idElt = this.getAttribute('id');
+                console.log(idElt);
+                choisie.push(idElt);
+                console.log(choisie);
+                deuxieme_Choix(idElt);
+            }
+        }
+        
+        // ajoute le bouton au body du html
+        temp.appendChild(newButton);
+        compteur = compteur+1;
+
+        if (compteur == 4) {
+            indice = indice+1;
+            compteur = 1;
+        }
     }
 }
 
@@ -77,7 +101,7 @@ function deuxieme_Choix(id) {
 
     if (choisie.length == 2) {
         var choix_possible = data[choisie[0]];
-        var choix_possible_2 = choix_possible[id]
+        var choix_possible_2 = choix_possible[id];
 
         for (const element in choix_possible) {
             check = choix_possible_2.includes(element);
@@ -87,7 +111,17 @@ function deuxieme_Choix(id) {
                 suprimer.className = "supr";
             }
         }
-        console.log(choix_possible_2)
+        console.log(choix_possible_2);
 
+    }
+
+    if (choisie.length == 3) {
+        for (const element in data) {
+            check = choisie.includes(element)
+            if (check == false) {
+                var suprimer = document.getElementById(element);
+                suprimer.className = "supr";
+            }
+        }
     }
 }
