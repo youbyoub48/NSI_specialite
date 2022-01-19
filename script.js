@@ -15,6 +15,8 @@ function Bouton(){
         // id de l'element
         var idElt = this.getAttribute('id');
         console.log(idElt);
+        choisie.push(idElt)
+        console.log(choisie)
         deuxieme_Choix(idElt);
         }
     
@@ -40,6 +42,8 @@ function Lecture(){
     readTextFile("./data.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de data.json
         data = JSON.parse(text); // on mets le contenue de data.json dans la variable data
         console.log(data); // on print la variable data pour voir si tout marche bien
+        choisie = []
+        console.log(choisie)
         Liste_Spe();
         Bouton();
     });

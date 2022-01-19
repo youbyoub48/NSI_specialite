@@ -15,7 +15,7 @@
         "SVT" : ["NSI"],
         "NSI" : ["SVT"],
         "HLPHI" : ["LLCE","HGPO"],
-        "SES" : ["SES","MATHS","LLCE"]
+        "SES" : ["MATHS","LLCE"]
         },
     "HGPO" : {
         "SES" : ["MATHS","HLPHI","SVT","LLCE","ARTS"],
@@ -76,7 +76,7 @@
         "LLCE" : ["MATHS","HLPHI","ARTS","HGPO"],
         "HLPHI" : ["HGPO","LLCE"],
         "SVT" : ["NSI","MATHS","HGPO"],
-        "ARTS" : ["MATHS","MATHS","HGPO"],
+        "ARTS" : ["MATHS","HGPO"],
         "PH-CH" : ["MATHS"],
         "NSI" : ["SVT"]
         }
