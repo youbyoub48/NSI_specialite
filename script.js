@@ -5,7 +5,10 @@ function Bouton(){
     conteneur2.id = "conteneur2"
     conteneur.appendChild(conteneur2)
     var text_description = document.createElement("span");
-    conteneur.appendChild(text_description)
+    var conteneur_texte = document.createElement("div")
+    conteneur_texte.className = "texte"
+    conteneur.appendChild(conteneur_texte)
+    conteneur_texte.appendChild(text_description)
     var compteur = 1;
     var indice = 1;
 
@@ -20,6 +23,7 @@ function Bouton(){
         // crée une nouvelle image
         var newImg = document.createElement("img");
         newImg.src = "./4.png"
+        newImg.className = "spe"
         // texte de l'image
         var newTexte = document.createTextNode(element);
         var div = document.createElement("div");
@@ -33,8 +37,7 @@ function Bouton(){
         newImg.onclick = function() {
             var class_ = this.className
             
-            if (class_ != "supr") {
-                this.className = "choisie";
+            if (class_ != "spe supr") {
                 this.src = "./6.png"
                 // id de l'element
                 var idElt = this.getAttribute('id');
@@ -109,7 +112,7 @@ function deuxieme_Choix(id) {
             if (check == false && element != id) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
-                suprimer.className = "supr";
+                suprimer.className = "spe supr";
                 suprimer.src = "./5.png"
             }
         }
@@ -124,7 +127,7 @@ function deuxieme_Choix(id) {
             if (check == false && element != id) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
-                suprimer.className = "supr";
+                suprimer.className = "spe supr";
                 suprimer.src = "./5.png"
             }
         }
@@ -137,7 +140,7 @@ function deuxieme_Choix(id) {
             check = choisie.includes(element)
             if (check == false) {
                 var suprimer = document.getElementById(element);
-                suprimer.className = "supr";
+                suprimer.className = "spe supr";
                 suprimer.src = "./5.png"
             }
         }
