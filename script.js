@@ -1,16 +1,20 @@
 function Bouton(){
-    var conteneur = document.getElementById("conteneur")
+    var conteneur = document.getElementById("conteneur");
     document.body.appendChild(conteneur);
+    var conteneur2 = document.createElement("div");
+    conteneur2.id = "conteneur2"
+    conteneur.appendChild(conteneur2)
+    var text_description = document.createElement("span");
+    conteneur.appendChild(text_description)
     var compteur = 1;
     var indice = 1;
 
     for (const element in data) {
-        console.log(compteur)
         if (compteur == 1) {
             var temp = document.createElement("div");
             temp.id = indice;
-            temp.className = "boite"
-            conteneur.appendChild(temp)
+            temp.className = "boite";
+            conteneur2.appendChild(temp);
         }
 
         // crée une nouvelle image
@@ -34,6 +38,7 @@ function Bouton(){
                 this.src = "./6.png"
                 // id de l'element
                 var idElt = this.getAttribute('id');
+                text_description.innerHTML = description[idElt]
                 console.log(idElt);
                 choisie.push(idElt);
                 console.log(choisie);
@@ -68,6 +73,11 @@ function readTextFile(file, callback) { // cette fonction sert a récuperer les 
 
 
 function Lecture(){
+
+    readTextFile("./description.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de data.json
+        description = JSON.parse(text); // on mets le contenue de data.json dans la variable data
+    });
+
     readTextFile("./data.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de data.json
         data = JSON.parse(text); // on mets le contenue de data.json dans la variable data
         console.log(data); // on print la variable data pour voir si tout marche bien
