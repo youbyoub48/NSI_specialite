@@ -42,7 +42,7 @@ function Bouton(){
 
         // crée une nouvelle image
         var newImg = document.createElement("img");
-        newImg.src = "./4.png"
+        newImg.src = "./image/4.png"
         newImg.className = "spe"
         // texte de l'image
         var newTexte = document.createTextNode(liste_hasard[i]);
@@ -58,7 +58,7 @@ function Bouton(){
             var class_ = this.className;
             
             if (class_ != "spe supr") {
-                this.src = "./6.png";
+                this.src = "./image/6.png";
                 // id de l'element
                 var idElt = this.getAttribute('id');
                 this.className = "spe supr";
@@ -105,11 +105,11 @@ function readTextFile(file, callback) { // cette fonction sert a récuperer les 
 
 function Lecture(){
 
-    readTextFile("./description.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de data.json
+    readTextFile("./json/description.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de data.json
         description = JSON.parse(text); // on mets le contenue de data.json dans la variable data
     });
 
-    readTextFile("./data.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de data.json
+    readTextFile("./json/data.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de data.json
         data = JSON.parse(text); // on mets le contenue de data.json dans la variable data
         console.log(data); // on print la variable data pour voir si tout marche bien
         choisie = []
@@ -134,7 +134,7 @@ function deuxieme_Choix(id) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
                 suprimer.className = "spe supr";
-                suprimer.src = "./5.png"
+                suprimer.src = "./image/5.png"
             }
         }
     }
@@ -149,7 +149,7 @@ function deuxieme_Choix(id) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
                 suprimer.className = "spe supr";
-                suprimer.src = "./5.png"
+                suprimer.src = "./image/5.png"
             }
         }
         console.log(choix_possible_2);
@@ -162,7 +162,7 @@ function deuxieme_Choix(id) {
             if (check == false) {
                 var suprimer = document.getElementById(element);
                 suprimer.className = "spe supr";
-                suprimer.src = "./5.png"
+                suprimer.src = "./image/5.png"
             }
         }
     }

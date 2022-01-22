@@ -1,6 +1,6 @@
 #conteneur
 {
-  background-image: url(./fond_app.png);
+  background-image: url(./image/fond_app.png);
   width: 800px;
 }
 
@@ -8,7 +8,6 @@
 {
   display: flex;
   justify-content: center;
-  background-image: url(./fond_app.png);
 }
 
 .boite
