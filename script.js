@@ -2,13 +2,14 @@ function Bouton(){
     var conteneur = document.getElementById("conteneur");
     document.body.appendChild(conteneur);
     var conteneur2 = document.createElement("div");
-    conteneur2.id = "conteneur2"
-    conteneur.appendChild(conteneur2)
+    conteneur2.id = "conteneur2";
+    conteneur.appendChild(conteneur2);
     var text_description = document.createElement("span");
-    var conteneur_texte = document.createElement("div")
-    conteneur_texte.className = "texte"
-    conteneur.appendChild(conteneur_texte)
-    conteneur_texte.appendChild(text_description)
+    var conteneur_texte = document.createElement("div");
+    conteneur_texte.className = "texte";
+    conteneur.appendChild(conteneur_texte);
+    conteneur_texte.appendChild(text_description);
+    conteneur_texte.hidden = true
     var compteur = 1;
     var indice = 1;
 
@@ -35,13 +36,13 @@ function Bouton(){
         newImg.id = element;
 
         newImg.onclick = function() {
-            var class_ = this.className
+            var class_ = this.className;
             
             if (class_ != "spe supr") {
-                this.src = "./6.png"
+                this.src = "./6.png";
                 // id de l'element
                 var idElt = this.getAttribute('id');
-                text_description.innerHTML = description[idElt]
+                this.className = "spe supr";
                 console.log(idElt);
                 choisie.push(idElt);
                 console.log(choisie);
@@ -49,6 +50,14 @@ function Bouton(){
             }
         }
         
+        newImg.addEventListener("mouseenter", function( event ) {
+            // on met l'accent sur la cible de mouseenter
+            var class_ = this.className
+            var idElt = this.getAttribute('id');
+            text_description.innerHTML = description[idElt]
+            conteneur_texte.hidden = false;
+        }, false)
+
         // ajoute le bouton au body du html
         div.appendChild(newImg);
         div.appendChild(span_text);

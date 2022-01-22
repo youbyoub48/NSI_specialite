@@ -1,6 +1,6 @@
 {
     "NSI" : {
-        "MATHS" : ["PC-CH","LLCE"],
+        "MATHS" : ["PH-CH","LLCE"],
         "SVT" : ["SES","ARTS","HLPHI"],
         "PH-CH" : ["MATHS"],
         "LLCE" : ["MATHS"],
@@ -10,12 +10,13 @@
         },
     "ARTS" : {
         "LLCE" : ["SES","HLPHI","MATHS","HGPO"],
-        "MATHS" : ["PC-CH","SES","LLCE"],
-        "HGPO" : ["SES","LLCE","HLPHI","MATHS"],
+        "MATHS" : ["PH-CH","SES","LLCE"],
+        "HGPO" : ["SES","LLCE","HLPHI"],
         "SVT" : ["NSI"],
         "NSI" : ["SVT"],
         "HLPHI" : ["LLCE","HGPO"],
-        "SES" : ["MATHS","LLCE"]
+        "SES" : ["HGPO","MATHS","LLCE"],
+        "PH-CH" : ["MATHS"]
         },
     "HGPO" : {
         "SES" : ["MATHS","HLPHI","SVT","LLCE","ARTS"],
@@ -76,7 +77,7 @@
         "LLCE" : ["MATHS","HLPHI","ARTS","HGPO"],
         "HLPHI" : ["HGPO","LLCE"],
         "SVT" : ["NSI","MATHS","HGPO"],
-        "ARTS" : ["MATHS","HGPO"],
+        "ARTS" : ["MATHS","HGPO","LLCE"],
         "PH-CH" : ["MATHS"],
         "NSI" : ["SVT"]
         }
