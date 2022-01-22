@@ -12,8 +12,27 @@ function Bouton(){
     conteneur_texte.hidden = true
     var compteur = 1;
     var indice = 1;
+    var liste_spe = [];
+    var liste_hasard = [];
+    var check;
 
     for (const element in data) {
+        liste_spe.push(element)
+    }
+
+    console.log(liste_spe)
+
+    while (liste_hasard.length != liste_spe.length) {
+        const random = Math.floor(Math.random() * liste_spe.length);
+        check = liste_hasard.includes(liste_spe[random])
+        if (check == false) {
+            liste_hasard.push(liste_spe[random])
+        }
+    }
+
+    console.log(liste_hasard)
+
+    for (const i in liste_spe) {
         if (compteur == 1) {
             var temp = document.createElement("div");
             temp.id = indice;
@@ -26,14 +45,14 @@ function Bouton(){
         newImg.src = "./4.png"
         newImg.className = "spe"
         // texte de l'image
-        var newTexte = document.createTextNode(element);
+        var newTexte = document.createTextNode(liste_hasard[i]);
         var div = document.createElement("div");
         div.className = "contenant"
         var span_text = document.createElement("span");
         span_text.appendChild(newTexte)
         span_text.className = "texte_centrer"
         // on lui donne le id du nom de la spe
-        newImg.id = element;
+        newImg.id = liste_hasard[i];
 
         newImg.onclick = function() {
             var class_ = this.className;
@@ -94,15 +113,8 @@ function Lecture(){
         data = JSON.parse(text); // on mets le contenue de data.json dans la variable data
         console.log(data); // on print la variable data pour voir si tout marche bien
         choisie = []
-        console.log(choisie)
         Bouton();
     });
-}
-
-function Liste_Spe(){
-    for (const element in data) {
-        console.log(element);
-    }
 }
 
 function deuxieme_Choix(id) {
