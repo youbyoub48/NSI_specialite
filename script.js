@@ -127,6 +127,11 @@ function Lecture(){ // Ceci est la première fonction appeler dans notre progamm
         description = JSON.parse(text); // on mets le contenue de description.json dans la variable description
     });
 
+    // lecture du fichier domaine.json
+    readTextFile("./json/domaine.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de domaine.json
+        domaine = JSON.parse(text); // on mets le contenue de domaine.json dans la variable domaine
+    });
+
     readTextFile("./json/data.json", function(text){ //on appelle la  fonction readTextFile pour récupérer le contenu de data.json
         data = JSON.parse(text); // on mets le contenue de data.json dans la variable data
         console.log(data); // on print la variable data pour voir si tout marche bien
@@ -148,11 +153,12 @@ function deuxieme_Choix(id) {
 
         for (const element in data) {
             check = liste_choix_possible.includes(element);
+
             if (check == false && element != id) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
                 suprimer.className = "spe supr";
-                suprimer.src = "./image/rouge.png"; // on met l'image en vert
+                suprimer.src = "./image/rouge.png"; // on met l'image en rouge
             };
         };
     };
@@ -163,11 +169,12 @@ function deuxieme_Choix(id) {
 
         for (const element in choix_possible) {
             check = choix_possible_2.includes(element);
+
             if (check == false && element != id) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
                 suprimer.className = "spe supr";
-                suprimer.src = "./image/rouge.png"; // on met l'image en vert
+                suprimer.src = "./image/rouge.png"; // on met l'image en rouge
             };
         };
         console.log(choix_possible_2);
@@ -177,11 +184,18 @@ function deuxieme_Choix(id) {
     if (choisie.length == 3) {
         for (const element in data) {
             check = choisie.includes(element)
+
             if (check == false) {
                 var suprimer = document.getElementById(element);
                 suprimer.className = "spe supr";
-                suprimer.src = "./image/rouge.png"; // on met l'image en vert
+                suprimer.src = "./image/rouge.png"; // on met l'image en rouge
             };
         };
+
+        var premier = domaine[choisie[0]]
+        var deuxieme = premier[choisie[1]]
+        var debouche = deuxieme[choisie[2]]
+        console.log(deuxieme)
+        console.log(debouche)
     };
 };
