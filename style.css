@@ -52,10 +52,31 @@
   opacity: 70%;
 }
 
+.debouche
+{
+  list-style-type: none;
+}
+
+.debouche li
+{
+  margin-top: 1em;
+}
+
+.debouche_div
+{
+  background: linear-gradient(135deg, #23bcc1 50%, #0f7bad);
+  padding: 1em;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: 1px 1px 12px #555;
+  opacity: 70%;
+}
+
 @keyframes spin {
   from {
       transform:rotate(0deg);
   }
+  
   to {
       transform:rotate(360deg);
   }

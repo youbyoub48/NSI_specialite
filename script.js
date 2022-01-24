@@ -15,8 +15,17 @@ function Bouton(){  // C'est la fonction principale du programme qui va inisiali
     conteneur_texte.className = "texte";
     conteneur.appendChild(conteneur_texte);
     conteneur_texte.appendChild(text_description);
-    conteneur_texte.hidden = true
+    conteneur_texte.hidden = true;
 
+    // On crée la partie ou il y'aura les dévouche de notre menu de spécialités
+    text_debouche = document.createElement("ul");
+    conteneur_debouche = document.createElement("div");
+
+    text_debouche.className = "debouche";
+    conteneur_debouche.className = "debouche_div";
+    conteneur_debouche.appendChild(text_debouche);
+    conteneur_debouche.hidden = true;
+    
     // déclaration de variables
     var compteur = 0;
     var indice = 1;
@@ -105,6 +114,8 @@ function Bouton(){  // C'est la fonction principale du programme qui va inisiali
             compteur = 0;
         };
     };
+
+    conteneur2.appendChild(conteneur_debouche);
 };
 
 function readTextFile(file, callback) { // cette fonction sert a récuperer les données d'un fichier json
@@ -192,10 +203,18 @@ function deuxieme_Choix(id) {
             };
         };
 
-        var premier = domaine[choisie[0]]
-        var deuxieme = premier[choisie[1]]
-        var debouche = deuxieme[choisie[2]]
-        console.log(deuxieme)
-        console.log(debouche)
+        var premier = domaine[choisie[0]];
+        var deuxieme = premier[choisie[1]];
+        var debouche = deuxieme[choisie[2]];
+        console.log(debouche);
+
+        conteneur_debouche.hidden = false;
+
+        for (const i in debouche) {
+            var li = document.createElement("li");
+            li.innerHTML = debouche[i]
+            text_debouche.appendChild(li)
+        };
+
     };
 };
