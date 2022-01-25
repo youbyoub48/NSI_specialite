@@ -80,11 +80,11 @@ function Bouton(){  // C'est la fonction principale du programme qui va inisiali
         newImg.onclick = function() { // cette fonction s'execute si on click sur une des spécialités
             var class_ = this.className;
             
-            if (class_ != "spe supr") {
+            if (class_ != "spe supr" && class_ != "spe choisie") {
                 this.src = "./image/vert.png"; // on met la spécialités en vert
                 // id de l'element
                 var idElt = this.getAttribute('id'); // on récupere l'id pour pouvoir idenfier la spe
-                this.className = "spe supr"; // pour eviter que la fonction s'execute a nouveau si on reclique sur la même spe 
+                this.className = "spe choisie"; // pour eviter que la fonction s'execute a nouveau si on reclique sur la même spe 
 
                 console.log(idElt);
 
@@ -92,8 +92,40 @@ function Bouton(){  // C'est la fonction principale du programme qui va inisiali
 
                 console.log(choisie);
 
-                deuxieme_Choix(idElt);
+                deuxieme_Choix(choisie);
             };
+
+            if (class_ == "spe choisie") {
+                this.src = "./image/bleu.png";
+                var idElt = this.getAttribute('id');
+                this.className = "spe"
+
+                const index = choisie.indexOf(idElt);
+                if (index > -1) {
+                choisie.splice(index, 1); // 2nd parameter means remove one item only
+                }
+
+                // array = [2, 9]
+                console.log(choisie);
+
+                if (choisie.length == 0) {
+                    for (const i in liste_spe) {
+                        var normal = document.getElementById(liste_spe[i])
+                        normal.className = "spe"
+                        normal.src = "./image/bleu.png"
+                    }
+                }
+
+                if (choisie.length == 1) {
+                    deuxieme_Choix(choisie)
+                }
+
+                if (choisie.length == 2) {
+                    deuxieme_Choix(choisie[0])
+                    deuxieme_Choix(choisie)
+                }
+                
+            }
         };
         
         newImg.addEventListener("mouseenter", function( event ) { // cette fonction s'execute si on passe la sourie sur notre element
@@ -151,12 +183,12 @@ function Lecture(){ // Ceci est la première fonction appeler dans notre progamm
     });
 };
 
-function deuxieme_Choix(id) {
+function deuxieme_Choix(choisi) {
     var liste_choix_possible = [];
     var check;
     
     if (choisie.length == 1) {
-        var choix_possible = data[id];
+        var choix_possible = data[choisi[0]];
         console.log(choix_possible);
         for (const element in choix_possible) {
             liste_choix_possible.push(element);
@@ -165,28 +197,42 @@ function deuxieme_Choix(id) {
         for (const element in data) {
             check = liste_choix_possible.includes(element);
 
-            if (check == false && element != id) {
+            if (check == false && element != choisi[0]) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
                 suprimer.className = "spe supr";
                 suprimer.src = "./image/rouge.png"; // on met l'image en rouge
             };
+
+            if (check == true && element != choisi[0]) {
+                var normal = document.getElementById(element);
+                normal.className = "spe"
+                normal.src = "./image/bleu.png"
+            }
         };
     };
 
     if (choisie.length == 2) {
         var choix_possible = data[choisie[0]];
-        var choix_possible_2 = choix_possible[id];
+        var choix_possible_2 = choix_possible[choisie[1]];
+        console.log(choisie[1])
+        console.log(choix_possible_2)
 
         for (const element in choix_possible) {
             check = choix_possible_2.includes(element);
 
-            if (check == false && element != id) {
+            if (check == false && element != choisie[1]) {
                 console.log(element);
                 var suprimer = document.getElementById(element);
                 suprimer.className = "spe supr";
                 suprimer.src = "./image/rouge.png"; // on met l'image en rouge
             };
+
+            if (check == true && element != choisi[0]) {
+                var normal = document.getElementById(element);
+                normal.className = "spe"
+                normal.src = "./image/bleu.png"
+            }
         };
         console.log(choix_possible_2);
 
@@ -208,7 +254,7 @@ function deuxieme_Choix(id) {
         var debouche = deuxieme[choisie[2]];
         console.log(debouche);
 
-        conteneur_debouche.hidden = false;
+        conteneur_debouche.hidden = true;
 
         for (const i in debouche) {
             var li = document.createElement("li");
