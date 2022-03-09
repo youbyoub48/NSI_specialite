@@ -100,6 +100,8 @@ function Bouton(){  // C'est la fonction principale du programme qui va inisiali
                 var idElt = this.getAttribute('id');
                 this.className = "spe"
 
+                conteneur_debouche.hidden = true;
+
                 const index = choisie.indexOf(idElt);
                 if (index > -1) {
                 choisie.splice(index, 1); // 2nd parameter means remove one item only
@@ -254,7 +256,7 @@ function deuxieme_Choix(choisi) {
         var debouche = deuxieme[choisie[2]];
         console.log(debouche);
 
-        conteneur_debouche.hidden = true;
+        conteneur_debouche.hidden = false;
 
         for (const i in debouche) {
             var li = document.createElement("li");
